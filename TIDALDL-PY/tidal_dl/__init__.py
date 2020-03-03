@@ -56,7 +56,7 @@ def showConfig():
 
 def setting():
     cf = TidalConfig()
-    print("----------------Settings----------------")
+    print("----------------Setup----------------")
     print("Output directory                 :\t" + cf.outputdir)
     print("Sound Quality                    :\t" + cf.quality)
     print("Video Resolution                 :\t" + cf.resolution)

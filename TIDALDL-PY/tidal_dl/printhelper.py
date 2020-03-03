@@ -35,7 +35,7 @@ def printMenu():
     cmdHelper.myprint(" Enter '1' : ", cmdHelper.TextColor.Green, None)
     print("LogIn And Get SessionID.")
     cmdHelper.myprint(" Enter '2' : ", cmdHelper.TextColor.Green, None)
-    print("Change Settings.")
+    print("Change Setup.")
     cmdHelper.myprint(" Enter '3' : ", cmdHelper.TextColor.Green, None)
     print("Download an Album.")
     cmdHelper.myprint(" Enter '4' : ", cmdHelper.TextColor.Green, None)
