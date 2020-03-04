@@ -13,7 +13,6 @@ from tidal_dl.printhelper import printMenu, printChoice2, printErr, printWarring
 
 TIDAL_DL_VERSION = "2020.2.14.0"
 
-
 def logIn(username="", password=""):
     if username == "" or password == "":
         print("----------------LogIn------------------")
