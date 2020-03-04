@@ -4,13 +4,14 @@ import time
 
 
 class ServerZmq(threading.Thread):
-    def __init__(self, port=8000, callback=None):
+    def __init__(self, port=8000, callback=None, default_response='ack'):
         super(ServerZmq, self).__init__()
         context = zmq.Context()
         self._socket = context.socket(zmq.REP)
         self._socket.bind("tcp://*:%s" % port)
         self._callback = callback
         self._thread_stop = threading.Event()
+        self._response = default_response
 
     def set_callback(self, callback):
         self._callback = callback
@@ -24,7 +25,7 @@ class ServerZmq(threading.Thread):
             message = message.decode('ascii')
             print("Received request: %s" % message)
 
-            result = ''
+            result = self._response
             if self._callback:
                 result = self._callback(message)
 
@@ -60,7 +61,7 @@ class ClientZmq(threading.Thread):
                 self._socket.send_string(self._message)
                 expect_reply = True
                 while expect_reply:
-                    socks = dict(self.poller.poll(1000))
+                    socks = dict(self.poller.poll(3000))
                     if socks.get(self._socket) == zmq.POLLIN:
                         response = self._socket.recv()
                         response = response.decode('ascii')

@@ -423,9 +423,8 @@ class TidalTool(object):
             ret['url'] = []
         return ret
 
+
 # LogIn and Get SessionID
-
-
 class TidalAccount(object):
     def __init__(self, username, password, bymobile=False):
         token = '4zx46pyr9o8qZNRw'
