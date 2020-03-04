@@ -1,5 +1,9 @@
 version: '3'
 services:
+  server:
+    build: TIDALDL-PY
+    ports:
+      - "8000:8000"
   client:
     build: tidal-dl
     ports:

@@ -1,5 +1,6 @@
 import tidal_dl
-from tidal_dl.zmq_helper import ServerZmq
+import time
+from zmq_helper import ServerZmq
 
 
 class Server(object):
@@ -30,4 +31,13 @@ class Server(object):
 
 
 if __name__ == '__main__':
-    pass
+    s = Server()
+    running = True
+    while running:
+        try:
+            time.sleep(1)
+        except (KeyboardInterrupt, SystemError) as e:
+            running = False
+            s.cleanup()
+            print('fin')
+            raise e
