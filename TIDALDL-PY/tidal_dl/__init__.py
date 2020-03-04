@@ -13,7 +13,8 @@ from tidal_dl.printhelper import printMenu, printChoice2, printErr, printWarring
 
 TIDAL_DL_VERSION = "2020.2.14.0"
 
-def logIn(username="", password=""):
+
+def log_in(username="", password=""):
     if username == "" or password == "":
         print("----------------LogIn------------------")
         username = myinput("username:")
@@ -32,7 +33,7 @@ def logIn(username="", password=""):
     return True
 
 
-def showConfig():
+def show_config():
     cf = TidalConfig()
     print("----------------Config------------------")
     print("Username                         : " + cf.username)
@@ -142,8 +143,8 @@ def setting():
 def main(argv=None):
     print(LOG)
     cf = TidalConfig()
-    if logIn(cf.username, cf.password) == False:
-        while logIn("", "") == False:
+    if log_in(cf.username, cf.password) == False:
+        while log_in("", "") == False:
             pass
 
     cf = TidalConfig()
@@ -174,7 +175,7 @@ def main(argv=None):
         if choice == 0:
             return
         elif choice == 1:
-            logIn()
+            log_in()
             cf = TidalConfig()
             dl = Download(cf.threadnum)
         elif choice == 2:
@@ -194,13 +195,14 @@ def main(argv=None):
         elif choice == 8:
             dl.downloadArtistAlbum(cf.includesingle)
         elif choice == 9: 
-            showConfig()
+            show_config()
         #Hidden Code For Developer [200-299]
         elif choice == 200:
             dl.downloadArtistAlbum(False)
         else:
             dl.downloadUrl(strchoice)
             dl.downloadByFile(strchoice)
+
 
 def debug():
     # cf = TidalConfig()

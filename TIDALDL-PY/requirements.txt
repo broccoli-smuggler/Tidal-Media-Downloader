@@ -1,6 +1,7 @@
 aigpy==2020.2.14.0
 requests==2.21.0
-ffmpeg==1.4
+ffmpeg
 futures
 pycryptodome==3.7.0
 pydub==0.23.1
+pyzmq
