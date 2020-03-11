@@ -5,6 +5,6 @@ services:
     ports:
       - "8000:8000"
   client:
-    build: tidal-dl
+    build: tidal-dl-client
     ports:
       - "3000:3000"

@@ -14,7 +14,7 @@ import App from "./App";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Redirect from='/' to={(getCookie('p') === null) ? '/login' : '/app'}/>
+    <Redirect from='/*' to={(getCookie('p') === null) ? '/login' : '/app'}/>
     <Switch>
       <Route path='/login' component={Setup}/>
       <Route path='/app' component={App}/>

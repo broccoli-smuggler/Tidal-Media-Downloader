@@ -5,3 +5,4 @@ futures
 pycryptodome==3.7.0
 pydub==0.23.1
 pyzmq
+flask-cors
