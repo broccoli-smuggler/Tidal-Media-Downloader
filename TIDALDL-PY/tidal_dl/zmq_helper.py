@@ -65,6 +65,7 @@ class ClientZmq(threading.Thread):
     def run(self):
         while not self._thread_stop.is_set():
             if self._message:
+                print("Sending message" + self._message)
                 self._socket.send_string(self._message)
                 expect_reply = True
                 while expect_reply:

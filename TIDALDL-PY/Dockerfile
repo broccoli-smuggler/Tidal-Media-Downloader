@@ -10,4 +10,5 @@ COPY . .
 RUN pip3 install .
 
 EXPOSE 8000
-CMD [ "python3", "tidal_dl/server.py" ]
+EXPOSE 5000
+CMD [ "python3", "tidal_dl/server.py", "&&", "python3", "tidal_dl/flask_server.py"]
